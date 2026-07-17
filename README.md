@@ -53,7 +53,7 @@ docker compose up -d
 Open browser:
 
 ```
-http://localhost:8888
+http://localhost:1024
 ```
 
 ---
