@@ -1,5 +1,10 @@
 # Rapor Digital Madrasah (RDM) Docker
 
+![Docker Pulls](https://img.shields.io/docker/pulls/alfinauzikri/rdm)
+![Docker Image Size](https://img.shields.io/docker/image-size/alfinauzikri/rdm/latest)
+![Docker Stars](https://img.shields.io/docker/stars/alfinauzikri/rdm)
+![License](https://img.shields.io/github/license/alfinauzikri/rdm)
+
 Docker image untuk menjalankan **Rapor Digital Madrasah (RDM)** menggunakan:
 
 - Apache 2
