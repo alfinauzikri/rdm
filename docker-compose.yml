@@ -1,0 +1,35 @@
+services:
+  rdm-app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: alfinauzikri/rdm:latest
+    container_name: rdm-app
+    restart: unless-stopped
+    ports:
+      - "1024:80"
+    environment:
+      TZ: Asia/Jakarta
+      APP_SOURCE: https://hdmadrasah.id/download/minihosting
+    depends_on:
+      - rdm-db
+    volumes:
+      - rdm_app:/var/www/html
+
+  rdm-db:
+    image: mysql:5.7
+    container_name: rdm-db
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --max_allowed_packet=512M --innodb-log-file-size=256M --innodb-buffer-pool-size=512M
+    environment:
+      TZ: Asia/Jakarta
+      MYSQL_ROOT_PASSWORD: rdm
+      MYSQL_DATABASE: rdm
+      MYSQL_USER: rdm
+      MYSQL_PASSWORD: rdm
+    volumes:
+      - rdm_db:/var/lib/mysql
+
+volumes:
+  rdm_app:
+  rdm_db:
